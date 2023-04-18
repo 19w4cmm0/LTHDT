@@ -1,27 +1,19 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
+
 package lab2;
 
-/**
- *
- * @author Admin
- */
+
 public class ThongTinDangKyXe {
     private String chuXe;
     private String loaiXe;
-    private float giaTriXe;
-    private float dungTichXyLanh;
-    private float thue;
+    private int giaTriXe;
+    private int dungTichXyLanh;
    
    public ThongTinDangKyXe(){}
-   public ThongTinDangKyXe(String chuXe, String loaiXe, float giaTriXe, float dungTichXyLanh, float thue){
+   public ThongTinDangKyXe(String chuXe, String loaiXe, int giaTriXe, int dungTichXyLanh){
        this.chuXe=chuXe;
        this.loaiXe=loaiXe;
        this.giaTriXe=giaTriXe;
        this.dungTichXyLanh=dungTichXyLanh;
-       this.thue=thue;
    }
 
     public String getChuXe() {
@@ -40,11 +32,7 @@ public class ThongTinDangKyXe {
         this.loaiXe = loaiXe;
     }
 
-    public float getGiaTriXe() {
-        return giaTriXe;
-    }
-
-    public float setGiaTriXe(float giaTriXe) {
+    public int getGiaTriXe() {
         if (giaTriXe <0){
             return -1;
         }
@@ -53,24 +41,27 @@ public class ThongTinDangKyXe {
         }
     }
 
-    public float getDungTichXyLanh() {
-        return dungTichXyLanh;
+    public void setGiaTriXe(int giaTriXe) {
+        this.giaTriXe=giaTriXe;   }
+
+    public int getDungTichXyLanh() {
+       if (dungTichXyLanh <0){
+            return -1;
+        }
+        else {
+            return dungTichXyLanh;
+        }
     }
 
-    public void setDungTichXyLanh(float dungTichXyLanh) {
+    public void setDungTichXyLanh(int dungTichXyLanh) {
         this.dungTichXyLanh = dungTichXyLanh;
     }
 
-    public float getThue() {
-        return thue;
-    }
-
-    public void setThue(float thue) {
-        this.thue = thue;
-    }
-   public float tinhThue(){
+   public int tinhThue(){
+       int thue;
        if (dungTichXyLanh < 100){
            thue = (1/100)*giaTriXe;
+           
        }
        else if (dungTichXyLanh > 200){
            thue = (5/100)*giaTriXe;
